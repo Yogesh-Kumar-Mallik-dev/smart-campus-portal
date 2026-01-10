@@ -21,8 +21,8 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-border bg-background relative">
-      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
+    <header className=" isolate z-[999] sticky border-b border-border bg-background top-0 backdrop-blur">
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4">
         <img className="h-12 w-12" src={logo} alt="logo" />
 
         {/* Desktop */}

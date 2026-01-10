@@ -5,7 +5,7 @@ import Footer from "@/components/public-facing/common/Footer.jsx";
 
 const PublicLayout = () => {
   return (
-    <div className="min-h-screen bg-background text-text">
+    <div className="min-h-screen bg-background text-text overflow-x-hidden">
       <Navbar />
       <main className="p-6">
         <Outlet />
