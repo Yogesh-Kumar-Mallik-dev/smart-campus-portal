@@ -1,13 +1,14 @@
+import logo from "@/assets/logo.svg"
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-  NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "@/components/basics/ThemeToggle.jsx";
 
 const links = [
   { name: "Home", to: "/" },
@@ -22,9 +23,7 @@ const Navbar = () => {
   return (
     <header className="border-b border-border bg-background relative">
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4">
-        <div className="font-semibold text-foreground">
-          Smart Campus
-        </div>
+        <img className="h-12 w-12" src={logo} alt="logo" />
 
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-6">
@@ -32,35 +31,68 @@ const Navbar = () => {
             <NavigationMenuList className="gap-4">
               {links.map((l) => (
                   <NavigationMenuItem key={l.name}>
-                    <NavigationMenuLink asChild>
-                      <NavLink to={l.to} className={({ isActive }) => `transition-colors ${isActive ? "text-primary" : "text-muted hover:text-primary"}`}>
-                        {l.name}
-                      </NavLink>
-                    </NavigationMenuLink>
+                    <NavLink
+                        to={l.to}
+                        className={({ isActive }) =>
+                            `transition-colors ${
+                                isActive
+                                    ? "text-primary"
+                                    : "text-muted hover:text-primary"
+                            }`
+                        }
+                    >
+                      {l.name}
+                    </NavLink>
                   </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
 
+          <ThemeToggle />
           <Button>Login</Button>
         </div>
 
         {/* Mobile toggle */}
-        <button className="md:hidden text-foreground z-50" onClick={() => setOpen(!open)}>
+        <button
+            className="md:hidden text-foreground z-50"
+            onClick={() => setOpen(!open)}
+        >
           {open ? <X /> : <Menu />}
         </button>
       </div>
 
       {/* Backdrop */}
       {open && (
-          <div className="fixed inset-0 bg-black/30 md:hidden" onClick={() => setOpen(false)}/>
+          <div
+              className="fixed inset-0 bg-black/30 md:hidden"
+              onClick={() => setOpen(false)}
+          />
       )}
 
       {/* Mobile slide-in menu */}
-      <div className={`fixed top-0 right-0 h-full w-64 bg-background border-l border-border transform transition-transform duration-300 ease-out md:hidden ${open ? "translate-x-0" : "translate-x-full"}`}>
+      <div
+          className={`fixed top-0 right-0 h-full w-64 bg-background border-l border-border transform transition-transform duration-300 ease-out md:hidden ${
+              open ? "translate-x-0" : "translate-x-full"
+          }`}
+      >
         <div className="p-4 space-y-4 mt-14">
+          <div className="flex justify-center">
+            <ThemeToggle />
+          </div>
+
           {links.map((l) => (
-              <NavLink key={l.name} to={l.to} className={({ isActive }) => `block text-lg ${isActive ? "text-primary" : "text-muted hover:text-primary"}`} onClick={() => setOpen(false)}>
+              <NavLink
+                  key={l.name}
+                  to={l.to}
+                  className={({ isActive }) =>
+                      `text-lg flex justify-center ${
+                          isActive
+                              ? "text-primary"
+                              : "text-muted hover:text-primary"
+                      }`
+                  }
+                  onClick={() => setOpen(false)}
+              >
                 {l.name}
               </NavLink>
           ))}
