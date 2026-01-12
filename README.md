@@ -1,16 +1,121 @@
-# React + Vite
+# Smart Campus Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive college portal built with **React + Vite + Tailwind
+CSS**.\
+This project focuses on clean architecture, a scalable theme system, and
+a smooth user experience across light and dark modes.
 
-Currently, two official plugins are available:
+The goal is to build a real-world campus platform with:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   Public-facing pages (Home, About, Admission, Hostel)
+-   A consistent design system
+-   A responsive layout with mobile navigation
+-   Future expansion for student dashboards and internal tools
 
-## React Compiler
+------------------------------------------------------------------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+-   ⚡ Fast setup with Vite
+-   🎨 Custom design system using CSS variables
+-   🌗 Light/Dark mode with zero duplication
+-   🧭 Routing with React Router
+-   🧩 Component system powered by shadcn/ui
+-   📱 Responsive Navbar with slide-in mobile menu
+-   🧠 Semantic utility classes (`bg-background`, `text-foreground`,
+    etc.)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+------------------------------------------------------------------------
+
+## 🛠 Tech Stack
+
+-   **React**
+-   **Vite**
+-   **Tailwind CSS (v3)**
+-   **React Router**
+-   **shadcn/ui**
+-   **CSS Variables for Theming**
+
+------------------------------------------------------------------------
+
+## 🚀 Getting Started
+
+Clone the repository and install dependencies:
+
+``` bash
+npm install
+```
+
+Run the development server:
+
+``` bash
+npm run dev
+```
+
+Open your browser at:
+
+    http://localhost:5173
+
+------------------------------------------------------------------------
+
+## 🌗 Theme System
+
+This project uses a custom theme architecture:
+
+-   All colors and shadows are defined as **CSS variables**
+-   `.dark` on `<html>` switches the entire theme
+-   Tailwind utilities map directly to those variables
+-   No `dark:` classes are used in JSX
+-   Components automatically adapt to the current mode
+
+Example usage:
+
+``` jsx
+<div className="bg-background text-text shadow-md">
+  Card
+</div>
+```
+
+Toggle dark mode by adding/removing the `dark` class on `<html>`.
+
+------------------------------------------------------------------------
+
+## 🧭 Routing Structure
+
+The app uses a layout + outlet pattern:
+
+    /
+     ├─ PublicLayout
+     │   ├─ Home
+     │   ├─ About
+     │   ├─ Admission
+     │   └─ Hostel
+     └─ NotFound
+
+`Navbar` lives in the layout and remains consistent across pages.
+
+------------------------------------------------------------------------
+
+## 📌 Roadmap
+
+-   [ ] Student authentication
+-   [ ] Dashboard for logged-in users
+-   [ ] Admission forms
+-   [ ] Hostel management module
+-   [ ] Admin panel
+-   [ ] API integration
+
+------------------------------------------------------------------------
+
+## 👤 Author
+
+Built and maintained by **Yogesh Kumar Mallik**\
+Aiming to create real-world, production-grade web systems while learning
+full-stack development and game development.
+
+------------------------------------------------------------------------
+
+## 📄 License
+
+This project is currently for learning and internal use.\
+License to be decided later.
