@@ -7,6 +7,7 @@ import Home from "@/components/public-facing/pages/Home";
 import About from "@/components/public-facing/pages/About";
 import NotFound from "@/components/basics/NotFound";
 import Admission from "@/components/public-facing/pages/Admission.jsx";
+import Join from "@/components/public-facing/pages/Join.jsx";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
           <Route path="/admission" element={<Admission/>} />
+          <Route path="/join" element={<Join/>} />
         </Route>
 
         <Route path="*" element={<NotFound />} />
