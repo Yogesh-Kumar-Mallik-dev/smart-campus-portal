@@ -4,6 +4,7 @@ import LeadershipMessage from "@/components/public-facing/about/LeadershipMessag
 import Achievements from "@/components/public-facing/about/Achievements.jsx";
 import InfrastructureSection from "@/components/public-facing/about/Infrastructure.jsx";
 import ValuesSection from "@/components/public-facing/about/Values.jsx";
+import AboutCTA from "@/components/public-facing/about/AboutCTA.jsx";
 
 
 const About = () => {
@@ -15,9 +16,9 @@ const About = () => {
       <Achievements/>
       <InfrastructureSection/>
       <ValuesSection/>
-      <AboutHero/>
+      <AboutCTA/>
     </>
   )
 }
 
-export default About
+export default About;
