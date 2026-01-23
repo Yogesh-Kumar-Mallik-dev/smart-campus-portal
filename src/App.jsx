@@ -6,6 +6,7 @@ import PublicLayout from "@/router/PublicLayout";
 import Home from "@/components/public-facing/pages/Home";
 import About from "@/components/public-facing/pages/About";
 import NotFound from "@/components/basics/NotFound";
+import Admission from "@/components/public-facing/pages/Admission.jsx";
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Route element={<PublicLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
+          <Route path="/admission" element={<Admission/>} />
         </Route>
 
         <Route path="*" element={<NotFound />} />

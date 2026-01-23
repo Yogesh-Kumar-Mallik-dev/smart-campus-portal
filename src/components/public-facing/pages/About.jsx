@@ -6,7 +6,6 @@ import InfrastructureSection from "@/components/public-facing/about/Infrastructu
 import ValuesSection from "@/components/public-facing/about/Values.jsx";
 import AboutCTA from "@/components/public-facing/about/AboutCTA.jsx";
 
-
 const About = () => {
   return (
     <>
